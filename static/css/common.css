@@ -1,0 +1,147 @@
+* {
+  font-family: "Nanum Gothic", sans-serif;
+  font-size: 65%;
+}
+
+.team_color {
+  background-color: #bbffee;
+}
+
+.header {
+  width: 100%;
+  height: 110px;
+
+  padding: 10px;
+
+  box-shadow: 1px 1px 5px gray;
+
+  background-color: white;
+
+  position: fixed;
+
+  top: 0px;
+
+  z-index: 99999;
+}
+
+.header .header_body {
+  width: 935px;
+  height: 100%;
+
+  margin: auto;
+
+  display: flex;
+  flex-direction: row;
+  align-items: normal;
+  justify-content: space-between;
+}
+
+.header .header_body .logo {
+  height: 100%;
+  border-radius: 50%;
+
+  box-shadow: 1px 1px 5px lightgrey;
+
+  cursor: pointer;
+}
+
+.header .header_body .user_info {
+  width: 30%;
+  height: 100%;
+
+  margin-top: 10px;
+  text-align: right;
+  line-height: 200%;
+}
+
+#user_name {
+  font-size: 14px;
+}
+
+#user_email {
+  font-size: 14px;
+}
+
+#logout_btn {
+  margin: 5px 0px 10px 5px;
+  padding: 5px;
+
+  border: 1px solid gray;
+  box-shadow: 1px 1px 5px lightgrey;
+}
+
+.blank {
+  width: 100%;
+  height: 120px;
+}
+
+/*헤더 네온*/
+@font-face {
+  font-family: neon;
+  src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/707108/neon.ttf);
+}
+
+.header .header_body .container {
+  width: 50%;
+  height: 100%;
+  margin-top: 10px;
+  text-align: right;
+}
+
+.neon {
+  font-family: neon;
+  color: #f6cd01;
+  font-size: 60px;
+  line-height: 60px;
+  text-shadow: 0 0 3vw lightcoral;
+}
+
+.neon {
+  animation: neon 1s ease infinite;
+  -moz-animation: neon 1s ease infinite;
+  -webkit-animation: neon 1s ease infinite;
+}
+
+@keyframes neon {
+  0%,
+  100% {
+    text-shadow: 0 0 1vw white, 0 0 3vw white, 0 0 10vw white, 0 0 10vw white,
+      0 0 0.4vw #00ffee, 0.5vw 0.5vw 0.1vw #806914;
+    color: #00ffee;
+  }
+}
+
+.main_body {
+  width: 935px;
+  height: auto;
+
+  margin: 120px auto;
+
+  background-color: #ffffff;
+  border: 1px solid #e8e8e8;
+  box-shadow: 1px 1px 5px gray;
+}
+
+.button_row {
+  width: 100%;
+  height: 50px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.button_box {
+  width: 40%;
+  height: 100%;
+}
+
+.button_box button {
+  font-size: 20px;
+  padding: 10px;
+  margin: 40px auto;
+
+  display: block;
+
+  border-radius: 5px;
+}
