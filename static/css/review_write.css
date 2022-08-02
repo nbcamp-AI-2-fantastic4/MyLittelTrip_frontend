@@ -1,0 +1,55 @@
+.container {
+    margin-top: 40pt;
+}
+
+.total_input {
+    margin: 0pt 10pt 40pt 10pt;
+}
+
+.title_input, .content_input, .img_input, .trip_input {
+    font-size: 30px;
+    margin: 20pt auto 20pt auto;
+}
+
+.title_input_text {
+    height: 30pt;
+    font-size: 20pt;
+}
+
+.content_input_text {
+    height: 200pt;
+    font-size: 20pt;
+}
+
+.selected_img {
+    width: 100pt;
+    height: 100pt;
+}
+
+.review_btn {
+    width: 100%;
+    height: 100%;
+    padding-bottom: 10px;
+}
+  
+.write_btn {
+    width: 80px;
+    height: 40px;
+    border-radius: 4px;
+    float: right;
+    
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.cancle_btn {
+    width: 80px;
+    height: 40px;
+    border-radius: 4px;
+    float: right;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    margin-right: 15px;
+}
