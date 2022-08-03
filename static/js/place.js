@@ -40,6 +40,32 @@ $(document).ready(function () {
   }
   
 
+// 장소 이미지 추가
+async function imageUpload() {
+  const formData = new FormData();
+
+  image = document.getElementById("upload-file").files[0];
+  
+  formData.append("image_one", image_one);
+
+  $.ajax({
+    type: "POST",
+    url: "http://127.0.0.1:8000/place/detail/",
+    data: formData,
+    cache: false,
+    contentType: false,
+    processData: false,
+    success: function (response) {
+      document
+        .getElementById("result-file")
+        .setAttribute("src", backend_url + "/out.png");
+    },
+    error: function (error) {
+      alert(error.responseText);
+    },
+  });
+}
+
 
   // Place 저장 place_add.html
 async function savePlace() {
@@ -51,7 +77,7 @@ async function savePlace() {
 
   $.ajax({
     type: "POST",
-    url: "${backend_base_url}/place/detail/",
+    url: "http://127.0.0.1:8000/place/detail/",
     data: JSON.stringify(data),
     success: function (response) {
       alert(response["message"]);
