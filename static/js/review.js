@@ -1,6 +1,7 @@
 const backend_base_url = "http://127.0.0.1:8000";
 const frontend_base_url = "http://127.0.0.1:5500";
 
+
 $(document).ready(function () {
     showReview();
   });
@@ -25,25 +26,31 @@ async function showReview() {
           let likes = review_list[i]["likes"];
   
           let temp_html = `<div class="col-md-4">
-                <div class="card card-blog">
-                    <div class="card-image">
-                        <a href="#"> <img class="img" src="${backend_base_url}/media/${review_img}"> </a>
-                        <div class="ripple-cont"></div>
-                    </div>
-                    <div class="table">
-                        <p class="card-caption">
-                            <a href="#">${title}</a>
-                        </p>
-                        <p class="card-description">${content}</p>
-                        <div class="ftr">
-                            <div class="author">
-                                <span class="username">${username} 님</span>
-                            </div>
-                            <div class="stats"> <i class="fa fa-heart"></i>${likes}</div>
-                        </div>
-                    </div>
-                </div>
-            </div>`;
+                              <div class="card card-blog">
+                                  <div class="card-image">
+                                      <a href="review_detail.html" id="review_detail_id" onclick="sendReviewId(${review_id})">
+                                        <img class="img" src="${backend_base_url}/media/${review_img}">
+                                      </a>
+                                      <div class="ripple-cont"></div>
+                                  </div>
+                                  <div class="table">
+                                      <p class="card-caption">
+                                        <a href="review_detail.html" id="review_detail_id" onclick="sendReviewId(${review_id})">
+                                          ${title}
+                                        </a>
+                                      </p>
+                                      <p class="card-description">${content}</p>
+                                      <div class="ftr">
+                                        <div class="author">
+                                          <span class="username">${username} 님</span>
+                                        </div>
+                                        <div class="stats">
+                                          <i class="fa fa-heart"></i>${likes}
+                                        </div>
+                                      </div>
+                                  </div>
+                              </div>
+                            </div>`;
         
           if (i % 3 == 0 && i != review_list.length - 1) {
             temp_html_2 = '<div class="review_row">' + temp_html;
@@ -66,3 +73,18 @@ async function showReview() {
       },
     });
   }
+
+
+// Review 상세 조회
+// async function sendReviewId(review_id) {
+  
+//   $.ajax({
+//     type: "GET",
+//     url: `${backend_base_url}/review/${review_id}/`,
+//     data: {},
+//     success: function (response) {
+//       let temp_html = `<div> 테스트중 아이디${review_id}</div>`;
+//       $("#test1").append(temp_html);
+//     },
+//   });
+// }
