@@ -1,0 +1,135 @@
+/* 타입별 메뉴 */
+.typemenu {
+    list-style-type: none;
+    padding: 0px;
+    margin-top: -60px;
+    width: 170px;
+    background: greenyellow;
+    height: 100%;
+    overflow: auto;
+    position: fixed;
+    text-align: center;
+  }
+  
+  .typemenu > li a {
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    color: #000;
+    font-weight: bold;
+  }
+  
+  .typemenu > li a:hover {
+    background: #333;
+    color: #fff;
+  }
+  
+  .productinfo {
+    margin-left: 120px;
+  }
+  
+  /* 브랜드별 메뉴 */
+  .placetypemenu {
+    width: 950px;
+    overflow: auto;
+    position: relative;
+    padding: 0;
+    display: flex;
+    margin-top: 110px;
+    margin-left: 170px;
+    align-content: center;
+  }
+  
+  .placetypemenu > li {
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+    text-decoration: none;
+    display: block;
+  
+    cursor: pointer;
+  }
+  
+  .placetypemenu > li {
+    background-color: white;
+    list-style-type: none;
+    text-align: center;
+    line-height: 50px;
+    width: calc(100% / 3);
+  }
+  
+  .colormenu li {
+    cursor: pointer;
+  }
+  
+  .home {
+    cursor: pointer;
+    font-size: 20px;
+  }
+  
+  li:nth-child(1),
+  li:nth-child(2) {
+    border-right: none;
+  }
+  
+  #result-box {
+    width: 100%;
+    height: auto;
+    margin-top: 70px;
+  }
+  
+  .main_body {
+    margin-top: 20px;
+    margin-left: 190px;
+  }
+  
+  .place_box {
+    width: 90%;
+    height: 250px;
+  
+    margin: 20px auto;
+  
+    border: 1px solid gray;
+    box-shadow: 1px 1px 3px gray;
+  
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  
+  .place_img_box {
+    width: 40%;
+    height: 100%;
+  }
+  
+  .place_img_box img {
+    height: 70%;
+  
+    margin-top: 30px;
+  
+    float: right;
+    object-fit: cover;
+  }
+  
+  .place_info_box {
+    width: 40%;
+    height: 100%;
+  }
+  
+  .place_info_box h2 {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .place_info_list {
+    font-size: 35px;
+  }
+  
+  .place_info_list li {
+    margin-top: 10px;
+  }
+  
+  .place_info_list li span {
+    font-weight: 600;
+  }
+  
