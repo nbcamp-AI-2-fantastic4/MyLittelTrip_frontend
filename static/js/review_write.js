@@ -72,7 +72,6 @@ function deleteImageAction(index) {
 backend_base_url = "http://127.0.0.1:8000";
 frontend_base_url = "http://127.0.0.1:5500";
 
-
 // 사용자의 여행일정
 $(document).ready(function () {
   showUserTrip();
@@ -83,6 +82,9 @@ async function showUserTrip() {
   $.ajax({
     type: "GET",
     url: `${backend_base_url}/review/write/`,
+    headers: {
+      'Authorization': `Bearer ${window.localStorage.getItem('access')}`,
+    },
     data: {},
     success: function (response) {
       let trip_list = response["trip_list"];
@@ -120,6 +122,9 @@ async function saveReview() {
     $.ajax({
       type: "POST",
       url: `${backend_base_url}/review/`,
+      headers: {
+        'Authorization': `Bearer ${window.localStorage.getItem('access')}`,
+      },
       data: formdata,
       cache: false,
       contentType: false,
