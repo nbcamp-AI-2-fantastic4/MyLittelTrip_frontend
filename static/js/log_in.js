@@ -10,14 +10,13 @@ async function handleSignin() {
 
   $.ajax({
     type: "POST",
-    url: "http://127.0.0.1:8000/user/login/",
+    url: "http://127.0.0.1:8000/user/token/",
     data: signinData,
     success: function (response) {
-      alert(response["message"]);
-      localStorage.setItem("user", response["id"]);
-      localStorage.setItem("fullname", response["fullname"]);
-      localStorage.setItem("email", response["email"]);
-      location.href = "upload.html";
+      alert("로그인 성공!");
+      localStorage.setItem("access", response["access"]);
+      localStorage.setItem("refresh", response["refresh"]);
+      location.href = "recommend.html";
     },
     error: function (error) {
       alert(error.responseText);
@@ -58,3 +57,13 @@ async function handleSignup() {
     },
   });
 }
+
+// 새로고침 시 실행
+$(document).ready(function () {
+  let result = localStorage.getItem("access", "");
+
+  console.log(result);
+  if (result != null) {
+    location.href = "recommend.html";
+  }
+});

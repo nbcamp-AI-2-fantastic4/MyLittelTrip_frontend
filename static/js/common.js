@@ -1,44 +1,35 @@
 // 로그아웃 기능
-async function logout() {
-  $.ajax({
-    type: "DELETE",
-    url: "http://127.0.0.1:8000/user/logout/",
-    data: {},
-    success: function (response) {
-      alert(response.message);
-      localStorage.removeItem("user");
-      localStorage.removeItem("email");
-      localStorage.removeItem("fullname");
-      location.href = "log_in.html";
-    },
-    error: function (error) {
-      alert(error.responseText);
-    },
-  });
+function logout() {
+  alert("로그아웃 완료");
+  localStorage.removeItem("access");
+  localStorage.removeItem("refresh");
+  localStorage.removeItem("user");
+  location.href = "log_in.html";
 }
 
 // 현재 로그인한 유저 정보 받아오기
 async function user_info() {
+  let token = localStorage.getItem("access");
+
   $.ajax({
     type: "GET",
     url: "http://127.0.0.1:8000/user/info/",
+    headers: { Authorization: "Bearer " + token },
     data: {},
     success: function (response) {
-      console.log(response);
+      $("#user_name").text(response["fullname"]);
+      $("#user_email").text(response["email"]);
     },
     error: function (error) {
-      alert(error.responseText);
-      location.href = "log_in.html";
+      $("#user_name").text = "";
+      $("#user_email").text = "";
+      alert("로그인을 해주세요");
+      logout();
     },
   });
 }
 
 // 페이지별 새로고침 시 실행
 $(document).ready(function () {
-  // if (localStorage.getItem("user", "")) {
-  //   $("#user_name").text(localStorage.getItem("fullname"));
-  //   $("#user_email").text(localStorage.getItem("email"));
-  // } else {
-  //   location.href = "log_in.html";
-  // }
+  user_info();
 });

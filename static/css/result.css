@@ -1,0 +1,65 @@
+.main_body div {
+  width: 100%;
+  height: auto;
+
+  padding-left: 10%;
+  padding-right: 10%;
+
+  margin-top: 40px;
+}
+
+.main_body div h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.main_body div table {
+  width: 100%;
+  margin: 20px auto;
+}
+
+.menu_title {
+  font-size: 25px;
+}
+
+.place {
+  font-size: 20px;
+}
+
+.save_box p {
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.save_box button {
+  width: 150px;
+  height: 30px;
+
+  margin: 20px auto;
+  padding: 3px;
+  font-size: 15px;
+
+  border: 1px solid gray;
+
+  display: block;
+}
+
+#trip_title {
+  width: 400px;
+  height: 30px;
+
+  padding: 3px;
+  font-size: 15px;
+
+  border: 1px solid gray;
+}
+
+#trip_desc {
+  width: 400px;
+  height: 200px;
+
+  padding: 3px;
+  font-size: 15px;
+
+  border: 1px solid gray;
+}

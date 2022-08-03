@@ -31,7 +31,9 @@
 
     <!-- css, js -->
     <link rel="stylesheet" href="../static/css/common.css" />
+    <link rel="stylesheet" href="../static/css/result.css" />
     <script defer src="../static/js/common.js"></script>
+    <script defer src="../static/js/result.js"></script>
 
     <!-- 참조할 css, js -->
 
@@ -52,16 +54,47 @@
         <span style="font-weight: bold" id="user_name"></span>
         <br />
         <span id="user_email"></span> <br />
-        <button id="logout_btn" onclick="location.href='/logout'">
-          로그아웃
-        </button>
+        <button id="logout_btn" onclick="logout()">로그아웃</button>
       </div>
     </div>
   </div>
 
   <body class="team_color">
     <div class="main_body">
-      <!--  -->
+      <div class="places_box">
+        <h2>포함된 여행 장소</h2>
+        <table id="order_table" class="table">
+          <thead>
+            <tr class="menu_title">
+              <th scope="col">검색 단어</th>
+              <th scope="col">장소 이름</th>
+              <th scope="col">주소</th>
+            </tr>
+          </thead>
+          <tbody id="order_list"></tbody>
+        </table>
+      </div>
+      <div class="result_box">
+        <h2>추천 받은 여행 일정</h2>
+        <table id="order_table" class="table">
+          <thead>
+            <tr class="menu_title">
+              <th scope="col">시작 시간</th>
+              <th scope="col">종료 시간</th>
+              <th scope="col">일정 내용</th>
+            </tr>
+          </thead>
+          <tbody id="course_list"></tbody>
+        </table>
+      </div>
+      <div class="save_box">
+        <h2>저장 하기</h2>
+        <p>제목</p>
+        <input id="trip_title" type="text" />
+        <p>내용</p>
+        <textarea id="trip_desc"> </textarea>
+        <button onclick="result_save()">여행 일정 저장 하기</button>
+      </div>
     </div>
   </body>
 </html>

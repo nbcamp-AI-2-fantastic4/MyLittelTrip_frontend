@@ -1,5 +1,5 @@
 * {
-  font-family: "Nanum Gothic", sans-serif;
+  font-family: "Dongle", sans-serif;
   font-size: 65%;
 }
 
@@ -116,6 +116,7 @@
   height: auto;
 
   margin: 120px auto;
+  padding-bottom: 50px;
 
   background-color: #ffffff;
   border: 1px solid #e8e8e8;
